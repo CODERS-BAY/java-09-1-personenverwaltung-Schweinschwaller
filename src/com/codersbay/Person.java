@@ -7,10 +7,10 @@ public class Person {
     private String lastName;
     private LocalDate dateOfBirth;
     private Address address;
-    private String gender;
+    private Gender gender;
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -18,7 +18,7 @@ public class Person {
     }
 
     public String getLastName() {
-        return lastName;
+        return this.lastName;
     }
 
     public void setLastName(String lastName) {
@@ -26,7 +26,7 @@ public class Person {
     }
 
     public LocalDate getDateOfBirth() {
-        return dateOfBirth;
+        return this.dateOfBirth;
     }
 
     public void setDateOfBirth(LocalDate dateOfBirth) {
@@ -34,7 +34,7 @@ public class Person {
     }
 
     public Address getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(Address address) {
@@ -42,11 +42,11 @@ public class Person {
     }
 
     public String getGender() {
-        return gender;
+        return this.gender.toString();
     }
 
     public void setGender(String gender) {
-        this.gender = gender;
+        this.gender = Gender.valueOf(gender);
     }
 
     public Person() {
@@ -57,6 +57,6 @@ public class Person {
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        this.gender = gender;
+        this.gender = Gender.valueOf(gender);
     }
 }

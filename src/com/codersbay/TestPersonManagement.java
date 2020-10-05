@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TestPersonManagement {
 
@@ -51,4 +52,17 @@ public class TestPersonManagement {
         assertEquals(myOrg.getNrOfPerson(), 1);
     }
 
+    @Test
+    public void testGender() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Address adr = new Address(4400, "Lilienhofweg", "Steyr", "4");
+            Person per = new Person("Georg", "Schweinschwaller", LocalDate.of(1986, 9, 3), adr, "test");
+        });
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            Address adr = new Address(4400, "Lilienhofweg", "Steyr", "4");
+            Person per = new Person("Georg", "Schweinschwaller", LocalDate.of(1986, 9, 3), adr, "Male");
+            per.setGender("false");
+        });
+    }
 }
