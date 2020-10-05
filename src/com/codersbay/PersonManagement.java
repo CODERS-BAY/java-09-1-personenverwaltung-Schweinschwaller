@@ -39,8 +39,10 @@ public class PersonManagement {
                 break;
             }
         }
+    }
 
-
+    public int getNrOfPerson() {
+        return persons.size();
     }
 
     public void removePerson(Person per) {
