@@ -1,18 +1,18 @@
 package com.codersbay;
 
 public enum Gender {
-    MALE("Male"),
-    FEMALE("Female"),
-    OTHER("Other");
+    Male("Male"),
+    Female("Female"),
+    Other("Other");
 
-    private String Gender;
+    private String gender;
 
     Gender(String gender) {
-        this.Gender = gender;
+        this.gender = gender;
     }
 
     @Override
     public String toString() {
-        return this.Gender;
+        return this.gender;
     }
 }
